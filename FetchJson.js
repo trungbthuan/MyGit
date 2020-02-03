@@ -6,18 +6,18 @@ import styles from './styles';
 
 function ItemTouchFlatList({id, title, releaseYear}) {
     handleOnPress = (ten) => {
-        Alert.alert("Hello " + ten)
+        Alert.alert("Đây là : " + ten)
     }
 
     return (
         <TouchableOpacity onPress={() => this.handleOnPress(title)} style={[styles.item]}>
-            <View style={myStyles.viewMain}>
-                <View style={myStyles.viewMain1}>
-                    <Image style={myStyles.imageLeft} source={require('../img/transformer.jpg')} />
+            <View style={fetchJsonStyles.viewMain}>
+                <View style={fetchJsonStyles.viewMain1}>
+                    <Image style={fetchJsonStyles.imageLeft} source={require('../img/transformer.jpg')} />
                 </View>
-                <View style={myStyles.viewMain2}>
-                    <Text style={myStyles.title}>{title}</Text>
-                    <Text style={myStyles.title}>{releaseYear}</Text>
+                <View style={fetchJsonStyles.viewMain2}>
+                    <Text style={fetchJsonStyles.title}>{title}</Text>
+                    <Text style={fetchJsonStyles.title}>{releaseYear}</Text>
                 </View>
             </View>
         </TouchableOpacity>
@@ -67,14 +67,14 @@ export default class FetchDataJson extends React.Component {
         return (
             <View style={{ flex: 1, paddingTop: 20 }}>
                 <CustomHeader navigation={this.props.navigation} />
-                <SafeAreaView style={myStyles.container}>
+                <SafeAreaView style={fetchJsonStyles.container}>
                     <FlatList
                         data={this.state.dataSource}
                         renderItem={({ item }) => (
                             <ItemTouchFlatList
                                 id={item.id}
-                                title={'Tên: ' + item.title}
-                                releaseYear={'Năm: ' + item.releaseYear}
+                                title={'Bộ film ' + item.title}
+                                releaseYear={'Sản xuất: ' + item.releaseYear}
                             />
                         )}
                         keyExtractor={({ id }, index) => id}
@@ -85,7 +85,7 @@ export default class FetchDataJson extends React.Component {
     }
 }
 
-const myStyles = StyleSheet.create({
+const fetchJsonStyles = StyleSheet.create({
     container: {
         flex: 1,
         marginTop: 20,
@@ -97,7 +97,8 @@ const myStyles = StyleSheet.create({
         marginHorizontal: 16,
     },
     title: {
-        fontSize: 15,
+        fontSize: 20,
+        color: '#152cfd'
     },
     imageLeft: {
         width: 80,

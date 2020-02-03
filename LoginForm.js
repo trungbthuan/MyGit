@@ -58,13 +58,13 @@ class LoginForm extends Component {
           <TouchableHighlight
             style={styles.buttonContainer}
             onPress={() => this.onClickListener('Forgot your password')}>
-            <Text>Forgot your password?</Text>
+            <Text style={{ fontSize: 15, color: '#152cfd'}} >Forgot your password?</Text>
           </TouchableHighlight>
 
           <TouchableHighlight
             style={styles.buttonContainer}
             onPress={() => this.onClickListener('Register')}>
-            <Text>Register</Text>
+            <Text style={{ fontSize: 15, color: '#152cfd' }}>Register</Text>
           </TouchableHighlight>
         </View>
       </View>
@@ -111,6 +111,10 @@ const styles = StyleSheet.create({
     marginLeft: 16,
     borderBottomColor: '#FFFFFF',
     flex: 1,
+    color: '#152cfd',
+    fontSize: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   inputIcon: {
     width: 30,
@@ -132,6 +136,7 @@ const styles = StyleSheet.create({
   },
   loginText: {
     color: 'white',
+    fontSize: 20,
   },
 });
 
