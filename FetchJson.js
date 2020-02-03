@@ -10,7 +10,7 @@ function ItemTouchFlatList({id, title, releaseYear}) {
     }
 
     return (
-        <TouchableOpacity onPress={() => this.handleOnPress({title})} style={[styles.item]}>
+        <TouchableOpacity onPress={() => this.handleOnPress(title)} style={[styles.item]}>
             <View style={myStyles.viewMain}>
                 <View style={myStyles.viewMain1}>
                     <Image style={myStyles.imageLeft} source={require('../img/transformer.jpg')} />
